@@ -1,0 +1,111 @@
+package com.example.doesaude
+
+import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.doesaude.api.Repository
+import com.example.doesaude.model.Categoria
+import com.example.doesaude.model.Endereco
+import com.example.doesaude.model.Postagem
+import com.example.doesaude.model.Usuario
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
+import retrofit2.Response
+import javax.inject.Inject
+
+@HiltViewModel
+class MainViewModel @Inject constructor(private val repository: Repository): ViewModel() {
+
+    var postagemSelecionada: Postagem? = null
+
+    private val _myCategoriaResponse = MutableLiveData<Response<List<Categoria>>>()
+    val myCategoriaResponse: LiveData<Response<List<Categoria>>> = _myCategoriaResponse
+
+    //PONTO DE ATENÇÃO
+    private val _myPostagemResponse = MutableLiveData<Response<List<Postagem>>>()
+    val myPostagemResponse: LiveData<Response<List<Postagem>>> = _myPostagemResponse
+
+    private val _myEncerecoResponse = MutableLiveData<Response<List<Endereco>>>()
+    val myEnderecoResponse: LiveData<Response<List<Endereco>>> = _myEncerecoResponse
+
+
+
+    init {
+        // listCategoria()
+    }
+
+    fun listCategoria(){
+        viewModelScope.launch {
+            try {
+                val response = repository.listCategoria()
+                _myCategoriaResponse.value = response
+            }catch (e: Exception){
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+
+    fun addPostagem(postagem: Postagem){
+        viewModelScope.launch {
+            try {
+                repository.addPostagem(postagem)
+            }catch (e: Exception){
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+
+    fun listPostagem(){
+        viewModelScope.launch {
+            try {
+                val response = repository.listPostagem()
+                _myPostagemResponse.value = response
+            }catch (e : Exception){
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+
+    fun updatePostagem(postagem: Postagem){
+        viewModelScope.launch {
+            try {
+                repository.updatePostagem(postagem)
+                listPostagem()
+
+            }catch (e: Exception){
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+
+    fun deletarPostagem(id: Long){
+        viewModelScope.launch {
+            try {
+                repository.deletePostagem(id)
+            }catch (e: Exception){
+                Log.d("Erro", e.message.toString())
+                listPostagem()
+            }
+        }
+    }
+    fun adicionarUser(usuario: Usuario){
+        viewModelScope.launch {
+            try {
+                repository.addUser(usuario)
+            }catch (e: Exception){
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+    fun adicionarEndereco(endereco: Endereco){
+        viewModelScope.launch {
+            try {
+                repository.addEndereco(endereco)
+            }catch (e: Exception){
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+}
