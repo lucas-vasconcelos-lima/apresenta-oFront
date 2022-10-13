@@ -31,12 +31,12 @@ class CadastroEndereco : Fragment() {
 
         binding.buttonEndFinalizar.setOnClickListener{
             findNavController().navigate(R.id.action_cadastro_endereco_to_listFragment)
-            inserirNoBanco()
+           // inserirNoBanco()
         }
         return binding.root
     }
 
-
+/*
     private fun validarCampos(cep: String, endereco: String, cidade: String,
                               bairro: String, numero: String): Boolean{
 
@@ -76,8 +76,7 @@ class CadastroEndereco : Fragment() {
         }else{
             Toast.makeText(context, "Verifique os campos", Toast.LENGTH_LONG).show()
         }
-
-
-
     }
+
+ */
 }

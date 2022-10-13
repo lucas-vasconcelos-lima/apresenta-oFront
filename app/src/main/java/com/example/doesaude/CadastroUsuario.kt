@@ -22,12 +22,13 @@ class CadastroUsuario : Fragment() {
 
 
         binding.buttonUserAvancar.setOnClickListener{
-            proxTela()
+            findNavController().navigate(R.id.action_cadastro_usuario_to_cadastro_endereco)
+           // proxTela()
         }
 
         return binding.root
     }
-
+/*
     private fun validarCampos(nome: String, cpf: String, email: String,
                               senha: String, confirmSenha: String): Boolean{
         //dataNasc: String
@@ -57,5 +58,7 @@ class CadastroUsuario : Fragment() {
             Toast.makeText(context, "Verifique os campos!", Toast.LENGTH_LONG).show()
         }
     }
+
+ */
 
 }
