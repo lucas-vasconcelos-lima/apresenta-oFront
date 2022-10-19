@@ -5,55 +5,118 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
+    android:backgroundTint="#FFFFFF"
+    app:cardBackgroundColor="#FAFAFA"
+    app:cardCornerRadius="20dp"
     app:cardElevation="10dp">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="447dp"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
         android:padding="10dp">
 
         <ImageView
             android:id="@+id/imagePostagem"
-            android:layout_width="match_parent"
-            android:layout_height="218dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="4dp"
+            app:circularflow_radiusInDP="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@android:drawable/ic_menu_report_image" />
 
         <TextView
             android:id="@+id/textTitulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_width="210dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
             android:text="TextView"
             android:textColor="#000000"
             android:textColorHint="#000000"
             android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imagePostagem"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="Título" />
 
         <TextView
             android:id="@+id/textDesc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:textColor="#000000"
-            android:textSize="20sp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imagePostagem"
+            app:layout_constraintTop_toBottomOf="@+id/textTitulo"
             tools:text="Descrição" />
 
         <TextView
-            android:id="@+id/textCategoria"
-            android:layout_width="match_parent"
+            android:id="@+id/textViewCategoria"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="120dp"
+            android:layout_marginBottom="4dp"
+            android:text="Categoria: "
             android:textColor="#000000"
-            android:textSize="20sp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/buttonEditPost"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imagePostagem"
+            app:layout_constraintTop_toBottomOf="@+id/textDesc" />
+
+        <TextView
+            android:id="@+id/textCategoria"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewCategoria"
+            app:layout_constraintTop_toBottomOf="@+id/textDesc"
             tools:text="Categoria" />
 
         <Button
             android:id="@+id/buttonDeletar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
             android:backgroundTint="#E42020"
-            android:text="DELETAR POSTAGEM" />
-    </LinearLayout>
+            android:paddingHorizontal="23dp"
+            android:paddingEnd="4dp"
+            android:paddingRight="1dp"
+            app:cornerRadius="10dp"
+            app:icon="@drawable/ic_baseline_delete_forever_24"
+            app:iconPadding="10dp"
+            app:iconTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imagePostagem"
+            app:layout_constraintTop_toBottomOf="@+id/textCategoria"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/buttonEditPost"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#00777D"
+            android:text="Editar"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonDeletar"
+            app:layout_constraintStart_toEndOf="@+id/imagePostagem"
+            app:layout_constraintTop_toBottomOf="@+id/textCategoria" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

@@ -40,6 +40,10 @@ class FormFragment : Fragment() {
             spinnerCategoria(response.body())
         }
 
+        binding.buttonVoltar.setOnClickListener {
+            findNavController().navigate(R.id.action_formFragment_to_listFragment)
+        }
+
         binding.buttonSalvar.setOnClickListener {
             inserirNoBanco()
         }
@@ -91,8 +95,8 @@ class FormFragment : Fragment() {
     }
     private fun validarCampos(imagem: String, titulo: String, descricao: String): Boolean{
         return !(
-                (imagem == "" || titulo == "" || titulo.length < 3 || titulo.length > 30)
-                        || (descricao.length < 5 || descricao.length > 200 || descricao == "")
+                (imagem == "" || titulo == "" || titulo.length < 2 || titulo.length > 10)
+                        || (descricao.length < 5 || descricao.length > 40 || descricao == "")
                 )
     }
 

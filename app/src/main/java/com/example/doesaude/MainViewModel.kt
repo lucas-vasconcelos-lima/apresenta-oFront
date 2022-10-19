@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.doesaude.api.Repository
 import com.example.doesaude.model.Categoria
-import com.example.doesaude.model.Endereco
 import com.example.doesaude.model.Postagem
 import com.example.doesaude.model.Usuario
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -27,9 +26,10 @@ class MainViewModel @Inject constructor(private val repository: Repository): Vie
     private val _myPostagemResponse = MutableLiveData<Response<List<Postagem>>>()
     val myPostagemResponse: LiveData<Response<List<Postagem>>> = _myPostagemResponse
 
-    private val _myEncerecoResponse = MutableLiveData<Response<List<Endereco>>>()
-    val myEnderecoResponse: LiveData<Response<List<Endereco>>> = _myEncerecoResponse
+    private val _myUsuarioResponse = MutableLiveData<Response<List<Usuario>>>()
+    val myUsuarioResponse: LiveData<Response<List<Usuario>>> = _myUsuarioResponse
 
+    val usuarioLogado = MutableLiveData<Usuario>()
 
 
     init {
@@ -90,22 +90,28 @@ class MainViewModel @Inject constructor(private val repository: Repository): Vie
             }
         }
     }
-    fun adicionarUser(usuario: Usuario){
+
+    fun listUsuario(){
         viewModelScope.launch {
             try {
-                repository.addUser(usuario)
+                val responseUsuario = repository.listUsuario()
+                _myUsuarioResponse.value = responseUsuario
             }catch (e: Exception){
                 Log.d("Erro", e.message.toString())
             }
         }
     }
-    fun adicionarEndereco(endereco: Endereco){
+
+    fun addUsuario(usuario: Usuario){
         viewModelScope.launch {
             try {
-                repository.addEndereco(endereco)
+                repository.addUsuario(usuario)
             }catch (e: Exception){
                 Log.d("Erro", e.message.toString())
             }
         }
     }
+    // repository.addCadastro(usuario)
+    // val responseUsuario = repository.getCadastro(usuario)
+    // usuarioLogado.value = responseUsuario
 }

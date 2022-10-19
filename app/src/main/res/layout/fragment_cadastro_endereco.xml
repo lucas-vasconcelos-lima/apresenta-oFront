@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
-        android:text="Cadastro"
+        android:text=" Cadastro endereço"
         android:textColor="#FFF2F2"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -40,7 +40,6 @@
         android:textColorHint="#65000D0E"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.609"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textTelefone" />
 
@@ -60,7 +59,6 @@
         android:textColorHint="#65000D0E"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textCadastro2" />
 
@@ -80,7 +78,6 @@
         android:textColorHint="#65000D0E"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.609"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textCidade" />
 
@@ -100,7 +97,6 @@
         android:textColorHint="#65000D0E"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.609"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textEndereco" />
 
@@ -120,7 +116,6 @@
         android:textColorHint="#65000D0E"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.609"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textCep" />
 
@@ -140,7 +135,6 @@
         android:textColorHint="#65000D0E"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.609"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textBairro" />
 
@@ -160,20 +154,5 @@
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textNumero" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="296dp"
-        android:layout_height="278dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="150dp"
-
-        android:rotation="315"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textNumero"
-        app:srcCompat="@drawable/ic_miroodles_sticker"
-        app:tint="#56FFFFFF" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

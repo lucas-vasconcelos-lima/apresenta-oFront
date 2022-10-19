@@ -1,7 +1,6 @@
 package com.example.doesaude.api
 
 import com.example.doesaude.model.Categoria
-import com.example.doesaude.model.Endereco
 import com.example.doesaude.model.Postagem
 import com.example.doesaude.model.Usuario
 import retrofit2.Response
@@ -11,12 +10,6 @@ interface ApiService {
 
     @GET("categoria")
     suspend fun listCategoria(): Response<List<Categoria>>
-
-    @POST("endereco")
-    suspend fun addEndereco(@Body endereco: Endereco): Response<Endereco>
-
-    @POST("usuario")
-    suspend fun addUser(@Body usuario: Usuario): Response<Usuario>
 
     @POST("postagem")
     suspend fun addPostagem(@Body postagem: Postagem): Response<Postagem>
@@ -29,5 +22,11 @@ interface ApiService {
 
     @DELETE("postagem/{id}")
     suspend fun deletePostagem(@Path("id") id: Long): Response<Postagem>
+
+    @GET("usuario")
+    suspend fun listUsuario(): Response<List<Usuario>>
+
+    @POST("usuario")
+    suspend fun addUsuario(@Body usuario: Usuario): Response<Usuario>
 
 }

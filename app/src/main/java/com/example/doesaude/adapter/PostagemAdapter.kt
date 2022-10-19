@@ -24,13 +24,13 @@ class PostagemAdapter(
 
     //CRIARÁ COM BASE NO CARD
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostagemViewHolder {
-        return PostagemViewHolder(CardLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return PostagemViewHolder(CardLayoutBinding.inflate(LayoutInflater.from(parent.context)
+            , parent, false))
     }
 
     //COMO IRÁ PROCESSAR DENTRO DO CARD
     override fun onBindViewHolder(holder: PostagemViewHolder, position: Int) {
         val postagem = listPostagem[position]
-
 
         holder.binding.textTitulo.text = postagem.titulo
         holder.binding.textDesc.text = postagem.descricao
@@ -42,10 +42,14 @@ class PostagemAdapter(
             .placeholder(android.R.drawable.ic_menu_report_image)
             .into(holder.binding.imagePostagem)
 
+        holder.binding.buttonEditPost.setOnClickListener {
+            taskClickListener.onTaskClickListener(postagem)
+        }
+       /*
         holder.itemView.setOnClickListener {
             taskClickListener.onTaskClickListener(postagem)
         }
-
+*/
         holder.binding.buttonDeletar.setOnClickListener {
             showAlertDialog(postagem.id)
         }

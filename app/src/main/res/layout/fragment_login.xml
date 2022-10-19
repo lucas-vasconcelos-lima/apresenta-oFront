@@ -57,15 +57,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageLogo" />
 
-    <com.google.android.material.textfield.TextInputEditText
+    <EditText
         android:id="@+id/editSenha"
-        style="@style/edit_text"
         android:layout_width="370dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginRight="30sp"
-        android:backgroundTint="#BFFFFFFF"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="#BFFFFFFF"
         android:hapticFeedbackEnabled="false"
         android:hint="Senha:"
         android:minHeight="48dp"
@@ -74,6 +73,7 @@
         android:textColor="#104D55"
         android:textColorHint="#65000D0E"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editEmail" />
@@ -83,7 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="26dp"
         android:text="Esqueceu sua senha?"
         android:textColor="#FFF1F1"
         android:textSize="20sp"
@@ -119,12 +119,17 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:background="#00FFFFFF"
         android:backgroundTint="#00FFFFFF"
+        android:padding="10dp"
         android:text="Clique aqui"
-        android:textColor="#00777D"
+        android:textColor="#026267"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="223dp"
-        tools:layout_editor_absoluteY="442dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toEndOf="@+id/textEsqueciSenha"
+        app:layout_constraintTop_toBottomOf="@+id/editSenha" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,8 +21,16 @@ class Login : Fragment() {
 
         binding = FragmentLoginBinding.inflate(layoutInflater, container, false)
 
-        binding.buttonEntrar.setOnClickListener {
+        binding.buttonCadastrar.setOnClickListener {
             findNavController().navigate(R.id.action_login_to_cadastro_usuario)
+        }
+
+        // obervar a variavel de email != String
+
+        binding.buttonEntrar.setOnClickListener {
+
+            // Fazer a verificação se o usuario existe
+            findNavController().navigate(R.id.action_login_to_listFragment)
         }
 
 

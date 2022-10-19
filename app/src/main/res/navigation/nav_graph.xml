@@ -12,7 +12,19 @@
         tools:layout="@layout/fragment_list" >
         <action
             android:id="@+id/action_listFragment_to_formFragment"
-            app:destination="@id/formFragment" />
+            app:destination="@id/formFragment"
+            app:popUpTo="@id/formFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_listFragment_to_suporteFragment"
+            app:destination="@id/suporteFragment"
+            app:popUpTo="@id/suporteFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_listFragment_to_meuPerfilFragment"
+            app:destination="@id/meuPerfilFragment"
+            app:popUpTo="@id/meuPerfilFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/formFragment"
@@ -33,7 +45,13 @@
         <action
             android:id="@+id/action_login_to_cadastro_usuario"
             app:destination="@id/cadastro_usuario"
-            app:popUpTo="@id/cadastro_usuario" />
+            app:popUpTo="@id/cadastro_usuario"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_login_to_listFragment"
+            app:destination="@id/listFragment"
+            app:popUpTo="@id/listFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/cadastro_usuario"
@@ -43,7 +61,8 @@
         <action
             android:id="@+id/action_cadastro_usuario_to_cadastro_endereco"
             app:destination="@id/cadastro_endereco"
-            app:popUpTo="@id/cadastro_endereco" />
+            app:popUpTo="@id/cadastro_endereco"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/cadastro_endereco"
@@ -52,6 +71,30 @@
         tools:layout="@layout/fragment_cadastro_endereco" >
         <action
             android:id="@+id/action_cadastro_endereco_to_listFragment"
-            app:destination="@id/listFragment" />
+            app:destination="@id/listFragment"
+            app:popUpTo="@id/listFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/suporteFragment"
+        android:name="com.example.doesaude.suporteFragment"
+        android:label="fragment_suporte"
+        tools:layout="@layout/fragment_suporte" >
+        <action
+            android:id="@+id/action_suporteFragment_to_listFragment"
+            app:destination="@id/listFragment"
+            app:popUpTo="@id/listFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/meuPerfilFragment"
+        android:name="com.example.doesaude.meuPerfilFragment"
+        android:label="fragment_meu_perfil"
+        tools:layout="@layout/fragment_meu_perfil" >
+        <action
+            android:id="@+id/action_meuPerfilFragment_to_listFragment"
+            app:destination="@id/listFragment"
+            app:popUpTo="@id/listFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
